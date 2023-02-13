@@ -7,12 +7,12 @@ echo "     ########## 需要将~/Library/Android/sdk/emulator路径加入环境�
 source ~/.bash_profile
 results=$(emulator -list-avds)
 
-echo $results
-
-if [$results -eq 'emulator: command not found'];then
+if [ $? -ne 0 ]
+then
    echo '当前emulator命令未加入环境变量'
    # 使用内置命令exit来杀死当前脚本
    exit 0
+fi
 
 echo "获取到的模拟器列表："
 
