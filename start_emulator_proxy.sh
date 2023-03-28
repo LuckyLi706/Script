@@ -41,7 +41,7 @@ read num
 #
 #
 # 判断当前输入
-if [ $num -lt $emulator_nums ] && [ $num -gt 0 ]; then
+if [ $num -lt $emulator_nums ] && [ $num -ge 0 ]; then
   emulator -avd ${emulator_name[num]} -writable-system -http-proxy http://127.0.0.1:8888 
 else
   echo "输入错误，必须根据0~$((emulator_nums - 1))的数字选择模拟器)"
